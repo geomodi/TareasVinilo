@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#controls button {
+    margin-right: 10px;
+}
+
+#task-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.task-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    word-wrap: break-word;
+    padding-bottom: 20px; /* Add padding to ensure space for bottom content */
+    height: auto; /* Make sure height is auto to fit content */
+}
+
+.task-card.dragging {
+    opacity: 0.5;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-urgency {
+    display: flex;
+    align-items: center;
+}
+
+.urgency-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 1px;
+}
+
+.task-content {
+    margin: 10px 0;
+}
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3px; /* Ensure space at the bottom for padding */
+}
+
+.task-comments {
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+    padding-bottom: 3px; /* Ensure space at the bottom for padding */
+}
+
+.task-comments p {
+    font-weight: bold; /* Make comments text bold */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.modal-header, .modal-content, .modal-footer {
+    margin-bottom: 20px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content p, .modal-content .task-urgency {
+    margin: 10px 0;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#modal-image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#modal-image-placeholder img {
+    max-width: 100%;
+    max-height: 400px;
+    cursor: pointer;
+}
+
+#modal-image-placeholder .no-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #888;
+}
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+}
+
+.modal-content input[type="text"], .modal-content input[type="password"], .modal-content textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content textarea {
+    resize: vertical;
+}
+
+.modal-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.comment-meta {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}

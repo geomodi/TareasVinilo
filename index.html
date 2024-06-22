@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas Pendientes de Simetria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tareas Pendientes de Simetria</h1>
+    </header>
+    <main>
+        <div id="controls">
+            <button id="sort-urgency">Organizar por Urgencia</button>
+            <button id="sort-due-date">Organizar por Fecha Que se Informo a Simetria</button>
+        </div>
+        <div id="task-container">
+            <!-- Task cards will be dynamically added here -->
+        </div>
+        <h2>Tareas Completadas por Simetria</h2>
+        <table id="completed-tasks">
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Urgencia</th>
+                    <th>Fecha Que se Informo a Simetria</th>
+                    <th>Fecha Que Simetria Termina La Tarea</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Completed tasks will be dynamically added here -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Modal for Viewing Task Details -->
+    <div id="view-modal" class="modal">
+        <div class="modal-header">
+            <h2>Task Details</h2>
+            <span class="close-button" id="modal-close-button">&times;</span>
+        </div>
+        <div class="modal-content">
+            <div class="task-urgency"></div>
+            <p id="modal-task-text"></p>
+            <h3>Actualizaciones</h3>
+            <div id="modal-task-comments"></div>
+            <div id="modal-image-placeholder">
+                <!-- Placeholder for image -->
+            </div>
+            <label for="new-comment">Add Comment:</label>
+            <textarea id="new-comment" rows="3"></textarea>
+            <label for="modal-password">Password:</label>
+            <input type="password" id="modal-password">
+            <label>
+                <input type="checkbox" id="complete-task-checkbox">
+                Marcar Tarea Como Completada
+            </label>
+            <button id="save-comment-button">Save Comment</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
